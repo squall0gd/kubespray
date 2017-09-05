@@ -54,6 +54,8 @@ spec:
       initialDelaySeconds: 30
       timeoutSeconds: 10
     volumeMounts:
+    - mountPath: /usr/bin/rbd
+      name: rbd
     - mountPath: {{ kube_cert_dir }}
       name: ssl-certs-kubernetes
       readOnly: true
@@ -63,6 +65,9 @@ spec:
       readOnly: true
 {% endif %}
   volumes:
+  - hostPath:
+      path: /usr/bin/rbd
+    name: rbd
   - hostPath:
       path: {{ kube_cert_dir }}
     name: ssl-certs-kubernetes

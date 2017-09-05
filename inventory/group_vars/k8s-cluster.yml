@@ -1,6 +1,6 @@
 # Valid bootstrap options (required): ubuntu, coreos, centos, none
-bootstrap_os: none
-
+bootstrap_os: ubuntu
+ansible_ssh_user: ubuntu
 #Directory where etcd data stored
 etcd_data_dir: /var/lib/etcd
 
@@ -32,7 +32,7 @@ kube_users_dir: "{{ kube_config_dir }}/users"
 kube_api_anonymous_auth: false
 
 ## Change this to use another Kubernetes version, e.g. a current beta release
-kube_version: v1.5.3
+kube_version: v1.6.4
 
 # Where the binaries will be downloaded.
 # Note: ensure that you've enough disk space (about 1G)
@@ -107,7 +107,7 @@ cluster_name: cluster.local
 # Subdomains of DNS domain to be resolved via /etc/resolv.conf for hostnet pods
 ndots: 2
 # Can be dnsmasq_kubedns, kubedns or none
-dns_mode: dnsmasq_kubedns
+dns_mode: kubedns
 # Can be docker_dns, host_resolvconf or none
 resolvconf_mode: docker_dns
 # Deploy netchecker app to verify DNS resolve as an HTTP service

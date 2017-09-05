@@ -13,7 +13,7 @@
 - name: Bootstrap | Install python 2.x and pip
   raw:
     apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y python-minimal python-pip
+    DEBIAN_FRONTEND=noninteractive apt-get install -y python-minimal python-pip ceph-common
   when:
     "{{ need_bootstrap.results | map(attribute='rc') | sort | last | bool }}"
 

@@ -19,6 +19,7 @@
   -v /lib/modules:/lib/modules:ro \
   {% endif -%}
   -v /sys:/sys:ro \
+  -v /lib/modules:/lib/modules \
   -v {{ docker_daemon_graph }}:/var/lib/docker:rw \
   -v /var/log:/var/log:rw \
   -v /var/lib/kubelet:/var/lib/kubelet:shared \
